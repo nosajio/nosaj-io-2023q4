@@ -1,0 +1,29 @@
+@use '../../styles/grid.scss';
+
+.masthead {
+  @extend .grid_content;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: var(--content-width);
+  width: 100%;
+  padding: 49px 0 89px;
+}
+
+.jason_logo {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav_links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  column-gap: 40px;
+}
+
+.page {
+  @extend .content_grid;
+  margin: 0 auto;
+}

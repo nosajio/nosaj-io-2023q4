@@ -1,0 +1,76 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Author {
+  id    Int    @id @default(autoincrement())
+  name  String
+  posts Post[]
+
+  @@map("authors")
+}
+
+model Post {
+  id         Int      @id @default(autoincrement())
+  slug       String   @unique
+  title      String
+  markdown   String
+  html       String
+  blurb      String?
+  coverImage String?
+  pubDate    DateTime
+  published  Boolean  @default(false)
+  authorId   Int
+  author     Author   @relation(fields: [authorId], references: [id])
+  Email      Email[]
+
+  @@map("posts")
+}
+
+model Subscriber {
+  id            Int       @id @default(autoincrement())
+  email         String    @unique
+  subscribeDate DateTime  @default(now())
+  confirmDate   DateTime?
+  confirmToken  String?
+  Email         Email[]
+
+  @@map("subscribers")
+}
+
+enum EmailStatus {
+  SENT
+  FAILED
+}
+
+model Email {
+  id           Int         @id @default(autoincrement())
+  sentDate     DateTime    @default(now())
+  status       EmailStatus
+  subject      String
+  body         String
+  from         String
+  subscriberId Int
+  subscriber   Subscriber  @relation(fields: [subscriberId], references: [id])
+  postId       Int
+  post         Post        @relation(fields: [postId], references: [id])
+
+  @@map("emails")
+}
+
+model Event {
+  id        Int      @id @default(autoincrement())
+  event     String
+  data      Json     @default("{}")
+  timestamp DateTime @default(now())
+
+  @@map("events")
+}

@@ -1,0 +1,89 @@
+@use 'modern-normalize';
+@use './basier.scss';
+
+:root {
+  // Typography
+  --font-family: 'basier', sans-serif;
+
+  // Sizes
+  --line-height-reading: 1.49;
+  --line-height-headings: 1.13;
+  --scale-exponent: 1.222;
+  --content-width: 912px;
+
+  // Grid
+  --grid-gutter: 18px;
+  --grid-columns: 12;
+
+  // Colors
+  --color-white: rgba(255, 255, 255, 1);
+  --color-black: rgba(0, 0, 0, 1);
+
+  --color-gray-1: rgba(4, 8, 23, 1);
+  --color-gray-2: rgba(21, 30, 62, 1);
+  --color-gray-3: rgba(49, 55, 91, 1);
+  --color-gray-4: rgba(78, 83, 121, 1);
+  --color-gray-5: rgba(108, 112, 152, 1);
+  --color-gray-6: rgba(140, 143, 184, 1);
+  --color-gray-7: rgba(172, 175, 218, 1);
+  --color-gray-8: rgba(214, 214, 237, 1);
+
+  --color-green-1: rgba(2, 31, 2, 1);
+  --color-green-2: rgba(0, 66, 0, 1);
+  --color-green-3: rgba(0, 120, 45, 1);
+  --color-green-4: rgba(0, 177, 95, 1);
+  --color-green-5: rgba(0, 237, 149, 1);
+  --color-green-6: rgba(116, 243, 175, 1);
+  --color-green-7: rgba(169, 248, 202, 1);
+  --color-green-8: rgba(214, 252, 228, 1);
+
+  --color-blue-1: rgba(2, 13, 40, 1);
+  --color-blue-2: rgba(0, 36, 127, 1);
+  --color-blue-3: rgba(0, 68, 168, 1);
+  --color-blue-4: rgba(52, 104, 211, 1);
+  --color-blue-5: rgba(105, 142, 255, 1);
+  --color-blue-6: rgba(151, 169, 255, 1);
+  --color-blue-7: rgba(189, 197, 255, 1);
+  --color-blue-8: rgba(223, 225, 255, 1);
+
+  --color-red-1: rgba(41, 3, 3, 1);
+  --color-red-2: rgba(119, 0, 0, 1);
+  --color-red-3: rgba(163, 0, 30, 1);
+  --color-red-4: rgba(209, 0, 60, 1);
+  --color-red-5: rgba(255, 58, 93, 1);
+  --color-red-6: rgba(255, 120, 130, 1);
+  --color-red-7: rgba(255, 167, 170, 1);
+  --color-red-8: rgba(255, 212, 212, 1);
+
+  --text-color: var(--color-black);
+  --background-color: var(--color-white);
+}
+
+body,
+html {
+  font-family: var(--font-family);
+  font-size: 16px;
+}
+
+body {
+  background: var(--background-color) url('/ui/bg_noise_light.png') center
+    repeat;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-blue-4);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}

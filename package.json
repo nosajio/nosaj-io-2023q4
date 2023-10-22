@@ -1,0 +1,35 @@
+{
+  "name": "nosaj-io-2023-q4",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "db:migrate": "dotenv -e .env.development.local -- prisma migrate dev",
+    "db:generate": "dotenv -e .env.development.local -- prisma generate",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@prisma/client": "5.4.2",
+    "clsx": "^2.0.0",
+    "modern-normalize": "^2.0.0",
+    "next": "13.5.6",
+    "react": "^18",
+    "react-dom": "^18",
+    "sass": "^1.69.4"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "dotenv-cli": "^7.3.0",
+    "eslint": "^8",
+    "eslint-config-next": "13.5.6",
+    "prettier": "^3.0.3",
+    "prisma": "^5.4.2",
+    "typescript": "^5"
+  }
+}
