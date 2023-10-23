@@ -3,13 +3,29 @@ import PageLayout from '@/layouts/page/PageLayout';
 import PostLayout from '@/layouts/post/PostLayout';
 import Head from 'next/head';
 
-export default async function PostPage() {
+export async function generateStaticParams() {
+  const posts = await client.post.findMany({
+    where: { published: true },
+  });
+  return posts.map(p => ({
+    slug: p.slug,
+  }));
+}
+
+type PostPageProps = {
+  params: {
+    slug: string;
+  };
+};
+
+export default async function PostPage({ params }: PostPageProps) {
   const post = await client.post.findUnique({
-    where: { slug: 'the-end-of-mastery', published: true },
+    where: { slug: params.slug, published: true },
   });
   if (!post) {
     return null;
   }
+
   return (
     <PageLayout>
       <Head>

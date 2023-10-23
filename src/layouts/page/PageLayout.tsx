@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import XLogo from '../../../public/ui/x_logo_nav.svg?svgr';
@@ -24,8 +23,6 @@ const pages = [
   },
 ];
 
-console.log(XLogo);
-
 export default function PageLayout({ children }: PageLayoutProps) {
   return (
     <div className={s.page}>
@@ -40,9 +37,9 @@ export default function PageLayout({ children }: PageLayoutProps) {
                 <Link href={page.href}>{page.label}</Link>
               </li>
             ))}
-            <li className={clsx(s.nav_link, s.nav_svg)}>
+            <li className={s.nav_link}>
               <Link target="_blank" href="https://x.com/nosajio">
-                <XLogo />
+                <XLogo className={s.nav_svg} />
               </Link>
             </li>
           </ul>

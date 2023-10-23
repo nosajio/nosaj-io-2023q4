@@ -1,3 +1,4 @@
+@use 'sass:math' as math;
 @use 'modern-normalize';
 @use './basier.scss';
 
@@ -6,10 +7,16 @@
   --font-family: 'basier', sans-serif;
 
   // Sizes
-  --line-height-reading: 1.49;
-  --line-height-headings: 1.13;
-  --scale-exponent: 1.222;
+  --line-height-reading: 149%;
+  --line-height-headings: 113%;
+  --scale-exponent: 1.25;
   --content-width: 912px;
+  --size-base-2: 1.125rem; // 18px
+
+  // Modular scale
+  @for $i from -5 through 12 {
+    --scale-#{$i}: #{math.pow(1.25, $i)};
+  }
 
   // Grid
   --grid-gutter: 18px;
@@ -27,6 +34,7 @@
   --color-gray-6: rgba(140, 143, 184, 1);
   --color-gray-7: rgba(172, 175, 218, 1);
   --color-gray-8: rgba(214, 214, 237, 1);
+  --color-gray-9: rgb(239, 239, 255);
 
   --color-green-1: rgba(2, 31, 2, 1);
   --color-green-2: rgba(0, 66, 0, 1);
