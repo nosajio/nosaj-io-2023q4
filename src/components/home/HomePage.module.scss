@@ -37,3 +37,21 @@
     margin: calc(1rem * var(--scale--2)) 0 0;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .section {
+    &_title {
+      color: var(--color-gray-6);
+    }
+
+    & + .section {
+      border-top-color: var(--color-gray-1);
+    }
+  }
+
+  .latestPost {
+    &_blurb {
+      color: var(--color-gray-6);
+    }
+  }
+}

@@ -36,3 +36,9 @@
   @extend .content_grid;
   margin: 0 auto;
 }
+
+@media (prefers-color-scheme: dark) {
+  .jason_logo a {
+    color: var(--color-gray-8);
+  }
+}

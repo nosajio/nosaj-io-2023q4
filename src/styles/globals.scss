@@ -3,7 +3,6 @@
 
 :root {
   // Typography
-  // --font-family: 'basier', sans-serif;
   --font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
     segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
     sans-serif;
@@ -67,6 +66,10 @@
 
   --text-color: var(--color-black);
   --background-color: var(--color-white);
+  --link-color: var(--text-color);
+  --link-hover-color: var(--color-blue-4);
+
+  color-scheme: light dark;
 }
 
 body,
@@ -82,12 +85,24 @@ body {
     repeat;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: var(--color-gray-9);
+    --background-color: var(--color-black);
+    --link-hover-color: var(--color-blue-6);
+  }
+
+  body {
+    background-image: none;
+  }
+}
+
 a {
-  color: var(--text-color);
+  color: var(--link-color);
   text-decoration: none;
 
   &:hover {
-    color: var(--color-blue-4);
+    color: var(--link-hover-color);
   }
 }
 

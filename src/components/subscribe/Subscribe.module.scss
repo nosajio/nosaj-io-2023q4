@@ -1,6 +1,7 @@
 .subscribe {
   --input-border-color: var(--color-gray-6);
   --input-background: var(--color-gray-9);
+  --input-text-color: var(--text-color);
 
   display: flex;
   column-gap: var(--size-base-2);
@@ -25,6 +26,7 @@
   padding: 7px var(--size-base-2);
   width: 256px;
   border-radius: 3px;
+  color: var(--input-text-color);
 
   &:focus {
     outline: none;
@@ -33,6 +35,7 @@
 }
 
 .button {
+  color: var(--input-text-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,7 +48,7 @@
 }
 
 .button svg path {
-  fill: var(--text-color);
+  fill: var(--input-text-color);
 }
 
 .button:hover {
@@ -65,5 +68,32 @@
 
   &_negative {
     color: var(--color-red-4);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .subscribe {
+    --input-border-color: var(--color-gray-3);
+    --input-background: var(--color-gray-1);
+    --input-text-color: var(--color-gray-8);
+  }
+
+  .inputWrapper .input {
+    &::placeholder {
+      color: var(--color-gray-5);
+    }
+
+    &:focus {
+      background: var(--color-gray-1);
+    }
+  }
+
+  .button:hover {
+    color: var(--color-white);
+    border-color: var(--color-gray-4);
+
+    > svg path {
+      fill: var(--color-white);
+    }
   }
 }

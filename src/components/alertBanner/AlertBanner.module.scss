@@ -17,3 +17,9 @@
 .alert.success {
   background: var(--color-green-8);
 }
+
+@media (prefers-color-scheme: dark) {
+  .alert {
+    color: var(--background-color);
+  }
+}

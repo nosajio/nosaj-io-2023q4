@@ -116,7 +116,7 @@
   h5 {
     margin-top: calc(var(--scale-3) * 1em);
     margin-bottom: var(--content-margin);
-    font-weight: 600;
+    font-weight: 700;
   }
   h1 {
     font-size: calc(var(--scale-4) * 1rem);
@@ -196,5 +196,41 @@
     margin: var(--content-margin) 0;
     border: none;
     border-top: 2px solid var(--text-color);
+    opacity: 0.5;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .meta_item {
+    color: var(--color-gray-7);
+    &:not(:first-child)::before {
+      color: var(--color-gray-4);
+    }
+  }
+
+  .blurb {
+    color: var(--color-gray-7);
+  }
+
+  .body {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      color: var(--color-gray-8);
+    }
+
+    a {
+      &:hover {
+        color: var(--color-blue-6);
+        text-decoration-color: var(--color-blue-7);
+      }
+    }
+
+    blockquote {
+      background: var(--color-gray-1);
+      border-color: var(--color-blue-3);
+    }
   }
 }
