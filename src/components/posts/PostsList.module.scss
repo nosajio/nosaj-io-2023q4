@@ -6,11 +6,12 @@
 
 .post {
   display: flex;
-  column-gap: calc(var(--size-base-2) * var(--scale-3));
+  column-gap: calc(var(--size-base-2) * var(--scale-1));
 
   &_date {
     width: calc(1rem * var(--scale-8));
-    color: var(--color-gray-5);
+    color: var(--color-gray-6);
+    font-weight: 400;
   }
 
   &_title {

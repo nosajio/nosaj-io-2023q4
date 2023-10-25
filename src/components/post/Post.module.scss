@@ -27,7 +27,7 @@
 .title {
   grid-area: title;
   font-size: calc(var(--scale-4) * 1rem);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .meta {
@@ -91,7 +91,7 @@
   }
 
   strong {
-    font-weight: 500;
+    font-weight: 600;
   }
 
   // Content margins
@@ -132,7 +132,7 @@
   h5 {
     font-size: var(--content-font-size);
     margin-bottom: calc(var(--content-margin-reset) + (var(--scale--1) * 1rem));
-    font-weight: 500;
+    font-weight: 600;
   }
 
   img {

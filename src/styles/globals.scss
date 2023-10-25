@@ -1,10 +1,11 @@
 @use 'sass:math' as math;
 @use 'modern-normalize';
-@use './basier.scss';
+// @use './basier.scss';
 
 :root {
   // Typography
-  --font-family: 'basier', sans-serif;
+  // --font-family: 'basier', sans-serif;
+  --font-family: 'mundial', sans-serif;
 
   // Sizes
   --line-height-reading: 149%;
@@ -74,6 +75,8 @@ html {
 }
 
 body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background: var(--background-color) url('/ui/bg_noise_light.png') center
     repeat;
 }
