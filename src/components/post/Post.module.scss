@@ -1,4 +1,4 @@
-@use '../page/PageLayout.module.scss';
+@use '@/styles/grid.scss';
 
 .post {
   --content-margin: calc(var(--scale-3) * 1rem);
@@ -51,7 +51,7 @@
 }
 
 .blurb {
-  font-size: calc(var(--scale-2) * 1rem);
+  font-size: var(--content-font-size);
   line-height: var(--content-line-height);
   color: var(--color-gray-5);
 }

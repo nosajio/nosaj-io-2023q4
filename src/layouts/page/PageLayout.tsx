@@ -1,6 +1,6 @@
+import XLogo from '@/../public/ui/x_logo_nav.svg?svgr';
 import Link from 'next/link';
 import { ReactNode } from 'react';
-import XLogo from '../../../public/ui/x_logo_nav.svg?svgr';
 import s from './PageLayout.module.scss';
 
 type PageLayoutProps = {
@@ -14,7 +14,7 @@ const pages = [
   },
   {
     label: 'Posts',
-    href: '/posts',
+    href: '/r',
   },
   {
     label: 'Feed',

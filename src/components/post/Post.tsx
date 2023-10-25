@@ -1,29 +1,14 @@
+import { calculateReadingTime, formatDate } from '@/helpers/postHelpers';
 import { Post } from '@prisma/client';
 import clsx from 'clsx';
 import { CSSProperties } from 'react';
-import s from './PostLayout.module.scss';
+import s from './Post.module.scss';
 
-type PostLayoutProps = {
+type PostProps = {
   post: Post;
 };
 
-const calculateReadingTime = (content: string) => {
-  const wpm = 200;
-  const numWords = content.split(/\s/g).length;
-  const minutes = numWords / wpm;
-  return Math.ceil(minutes);
-};
-
-const formatDate = (date: Date) => {
-  const monthShort = date.toLocaleDateString('en-US', { month: 'short' });
-  const day = date.getDate();
-  const year = date.getFullYear();
-  return `${day} ${monthShort}${
-    year !== new Date().getFullYear() ? ` ${year}` : ''
-  }`;
-};
-
-export default function PostLayout({ post }: PostLayoutProps) {
+export default function Post({ post }: PostProps) {
   const readingTime = calculateReadingTime(post.markdown);
   const pubdate = formatDate(post.pubDate);
 

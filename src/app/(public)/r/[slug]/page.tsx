@@ -1,6 +1,5 @@
+import Post from '@/components/post/Post';
 import client from '@/db/client';
-import PageLayout from '@/layouts/page/PageLayout';
-import PostLayout from '@/layouts/post/PostLayout';
 import Head from 'next/head';
 
 export async function generateStaticParams() {
@@ -27,12 +26,12 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <PageLayout>
+    <>
       <Head>
         <title>{post.title}</title>
         <meta name="description" content={post.blurb || ''} />
       </Head>
-      <PostLayout post={post} />
-    </PageLayout>
+      <Post post={post} />
+    </>
   );
 }
