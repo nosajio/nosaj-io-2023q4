@@ -23,8 +23,8 @@ export default function Post({ post }: PostProps) {
           </li>
           <li className={s.meta_item}>{readingTime} minutes</li>
         </ul>
+        {post.blurb && <p className={s.blurb}>{post.blurb}</p>}
       </header>
-      {post.blurb && <p className={s.blurb}>{post.blurb}</p>}
       {post.coverImage && (
         <div
           className={s.cover}

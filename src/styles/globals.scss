@@ -1,11 +1,12 @@
 @use 'sass:math' as math;
 @use 'modern-normalize';
-// @use './basier.scss';
 
 :root {
   // Typography
   // --font-family: 'basier', sans-serif;
-  --font-family: 'mundial', sans-serif;
+  --font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+    segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
+    sans-serif;
 
   // Sizes
   --line-height-reading: 149%;
