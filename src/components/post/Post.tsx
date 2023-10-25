@@ -2,6 +2,7 @@ import { calculateReadingTime, formatDate } from '@/helpers/postHelpers';
 import { Post } from '@prisma/client';
 import clsx from 'clsx';
 import { CSSProperties } from 'react';
+import Subscribe from '../subscribe/Subscribe';
 import s from './Post.module.scss';
 
 type PostProps = {
@@ -31,6 +32,9 @@ export default function Post({ post }: PostProps) {
         />
       )}
       <div className={s.body} dangerouslySetInnerHTML={{ __html: post.html }} />
+      <footer className={s.footer}>
+        <Subscribe email rss />
+      </footer>
     </div>
   );
 }

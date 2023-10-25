@@ -5,10 +5,11 @@
   --content-line-height: var(--line-height-reading);
   --content-font-size: calc(var(--scale-1) * 1rem);
   --content-margin-reset: calc(0rem - var(--content-margin));
+  --section-gap: calc(1rem * var(--scale-5));
 
   display: flex;
   flex-direction: column;
-  row-gap: calc(1rem * var(--scale-5));
+  row-gap: var(--section-gap);
 
   p {
     margin: 0;
@@ -67,6 +68,10 @@
     // padding-bottom: 32.892%;
     padding-bottom: 51.254%;
   }
+}
+
+.footer {
+  padding-bottom: calc(2 * var(--section-gap));
 }
 
 .body {

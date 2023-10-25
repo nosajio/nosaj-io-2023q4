@@ -56,9 +56,11 @@
 }
 
 .status {
+  padding-top: 7px;
   color: var(--color-gray-4);
 
   &_positive {
+    color: var(--text-color);
   }
 
   &_negative {

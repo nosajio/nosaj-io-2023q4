@@ -5,6 +5,22 @@ import { sendEmail } from './emailHelpers';
 
 const getConfirmLink = (token: string) => `${ROOT_URL}?token=${token}`;
 
+export async function saveConfirmationWithToken(token: string) {
+  const subscriber = await client.subscriber.findFirst({
+    where: { confirmToken: token },
+  });
+  if (!subscriber) {
+    return false;
+  }
+  await client.subscriber.update({
+    where: { id: subscriber.id },
+    data: {
+      confirmDate: new Date(),
+    },
+  });
+  return true;
+}
+
 async function sendConfirmationEmail(email: string, confirmToken: string) {
   // Get subscriber from db, ensure they're not yet confirmed
   const subscriber = await client.subscriber.findFirst({

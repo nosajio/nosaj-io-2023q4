@@ -1,0 +1,19 @@
+@use '@/styles/grid.scss';
+
+.alert {
+  width: 100%;
+  padding: calc(1rem * var(--scale--2)) 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--color-gray-9);
+}
+
+.alert.error {
+  background: var(--color-red-8);
+}
+
+.alert.success {
+  background: var(--color-green-8);
+}
