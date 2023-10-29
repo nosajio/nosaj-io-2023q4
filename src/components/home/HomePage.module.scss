@@ -1,22 +1,26 @@
 @use '@/styles/grid.scss';
 
 .home {
+  @extend .content_grid;
   --section-margin: calc(1rem * var(--scale-4));
 
-  display: flex;
+  margin: 0 auto;
+  // display: flex;
   flex-direction: column;
   row-gap: var(--section-margin);
 }
 
 .section {
+  @extend .grid_content;
   display: flex;
   flex-direction: column;
   row-gap: calc(1rem * var(--scale-1));
 
   &_title {
-    font-size: var(--size-base-2);
+    font-family: var(--font-family-monospace);
+    font-weight: 600;
+    font-size: 1rem;
     color: var(--color-gray-6);
-    font-weight: 400;
   }
 
   & + .section {
@@ -28,7 +32,7 @@
 .latestPost {
   &_title {
     font-size: calc(1rem * var(--scale-2));
-    font-weight: 600;
+    font-weight: 700;
   }
 
   &_blurb {
@@ -45,7 +49,7 @@
     }
 
     & + .section {
-      border-top-color: var(--color-gray-1);
+      border-top-color: var(--color-gray-2);
     }
   }
 

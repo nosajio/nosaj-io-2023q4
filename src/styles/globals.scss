@@ -3,9 +3,11 @@
 
 :root {
   // Typography
-  --font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
-    segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
-    sans-serif;
+  --font-family: 'aktiv-grotesk', -apple-system, BlinkMacSystemFont, avenir next,
+    avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto,
+    arial, sans-serif;
+  --font-family-monospace: 'Space Mono', 'SF Mono', 'Monaco', 'Inconsolata',
+    'Fira Mono', 'Droid Sans Mono', 'Source Code Pro', monospace;
 
   // Sizes
   --line-height-reading: 149%;
@@ -50,7 +52,7 @@
   --color-blue-2: rgba(0, 36, 127, 1);
   --color-blue-3: rgba(0, 68, 168, 1);
   --color-blue-4: rgba(52, 104, 211, 1);
-  --color-blue-5: rgba(105, 142, 255, 1);
+  --color-blue-5: rgb(71, 117, 255);
   --color-blue-6: rgba(151, 169, 255, 1);
   --color-blue-7: rgba(189, 197, 255, 1);
   --color-blue-8: rgba(223, 225, 255, 1);
@@ -67,7 +69,7 @@
   --text-color: var(--color-black);
   --background-color: var(--color-white);
   --link-color: var(--text-color);
-  --link-hover-color: var(--color-blue-4);
+  --link-hover-color: var(--color-red-5);
 
   color-scheme: light dark;
 }
@@ -89,7 +91,7 @@ body {
   :root {
     --text-color: var(--color-gray-9);
     --background-color: var(--color-black);
-    --link-hover-color: var(--color-blue-6);
+    --link-hover-color: var(--color-green-6);
   }
 
   body {

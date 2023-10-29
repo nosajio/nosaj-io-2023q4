@@ -12,6 +12,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap"
+        />
+        <link rel="stylesheet" href="https://use.typekit.net/llb7ehz.css" />
+      </head>
       <body>
         <AlertProvider>
           <PageLayout>{children}</PageLayout>

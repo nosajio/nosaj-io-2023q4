@@ -6,16 +6,18 @@
 
 .post {
   display: flex;
-  column-gap: calc(var(--size-base-2) * var(--scale-1));
+  column-gap: calc(var(--size-base-2) * var(--scale-3));
+  align-items: baseline;
 
   &_date {
-    width: calc(1rem * var(--scale-8));
-    color: var(--color-gray-6);
+    color: var(--color-gray-5);
     font-weight: 400;
+    font-family: var(--font-family-monospace);
+    font-size: 15px;
   }
 
   &_title {
     font-size: var(--size-base-2);
-    font-weight: 400;
+    font-weight: 500;
   }
 }
