@@ -1,19 +1,19 @@
 @use '../../styles/grid.scss';
 
 .masthead {
-  @extend .grid_content;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: var(--content-width);
   width: 100%;
-  padding: 49px 0 89px;
+  padding: calc(1rem * var(--scale-2)) calc(var(--size-base-2) * var(--scale-4))
+    89px;
   font-size: var(--size-base-2);
 }
 
 .jason_logo {
   font-weight: 700;
-  font-size: var(--size-base-2);
+  font-size: 1rem;
+  font-family: var(--font-family-monospace);
 }
 
 .nav_links {
@@ -33,7 +33,6 @@
 }
 
 .page {
-  @extend .content_grid;
   margin: 0 auto;
 }
 

@@ -14,27 +14,32 @@ export default function Post({ post }: PostProps) {
   const pubdate = formatDate(post.pubDate);
 
   return (
-    <div className={clsx(s.post, s.grid_content)} role="article">
-      <header className={s.header} role="heading" aria-level={1}>
-        <h1 className={s.title}>{post.title}</h1>
-        <ul className={s.meta}>
-          <li className={s.meta_item}>
-            <time dateTime={post.pubDate.toISOString()}>{pubdate}</time>
-          </li>
-          <li className={s.meta_item}>{readingTime} minutes</li>
-        </ul>
-        {post.blurb && <p className={s.blurb}>{post.blurb}</p>}
-      </header>
-      {post.coverImage && (
+    <div className={s.content_grid}>
+      <div className={clsx(s.post, s.grid_content)} role="article">
+        <header className={s.header} role="heading" aria-level={1}>
+          <h1 className={s.title}>{post.title}</h1>
+          <ul className={s.meta}>
+            <li className={s.meta_item}>
+              <time dateTime={post.pubDate.toISOString()}>{pubdate}</time>
+            </li>
+            <li className={s.meta_item}>{readingTime} minutes</li>
+          </ul>
+          {post.blurb && <p className={s.blurb}>{post.blurb}</p>}
+        </header>
+        {post.coverImage && (
+          <div
+            className={s.cover}
+            style={{ '--url': `url('${post.coverImage}')` } as CSSProperties}
+          />
+        )}
         <div
-          className={s.cover}
-          style={{ '--url': `url('${post.coverImage}')` } as CSSProperties}
+          className={s.body}
+          dangerouslySetInnerHTML={{ __html: post.html }}
         />
-      )}
-      <div className={s.body} dangerouslySetInnerHTML={{ __html: post.html }} />
-      <footer className={s.footer}>
-        <Subscribe email rss />
-      </footer>
+        <footer className={s.footer}>
+          <Subscribe email rss />
+        </footer>
+      </div>
     </div>
   );
 }

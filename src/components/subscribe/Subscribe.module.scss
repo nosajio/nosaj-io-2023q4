@@ -52,9 +52,9 @@
 }
 
 .button:hover {
-  color: var(--color-blue-4);
+  color: var(--color-red-5);
   > svg path {
-    fill: var(--color-blue-4);
+    fill: var(--color-red-5);
   }
 }
 
@@ -88,12 +88,16 @@
     }
   }
 
+  .inputWrapper:hover {
+    border-color: var(--color-gray-4);
+  }
+
   .button:hover {
-    color: var(--color-white);
+    color: var(--color-green-6);
     border-color: var(--color-gray-4);
 
     > svg path {
-      fill: var(--color-white);
+      fill: var(--color-green-6);
     }
   }
 }

@@ -1,5 +1,6 @@
 'use client';
 import RSSIcon from '@/../public/ui/rss_button.svg?svgr';
+import SubArrowSvg from '@/../public/ui/sub_arrow.svg?svgr';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -63,7 +64,7 @@ export default function Subscribe({ email, rss }: SubscribeProps) {
               className={s.button}
               onClick={handleSubscribe}
             >
-              {subscriptionState === 'loading' ? 'Sending...' : 'Subscribe'}
+              <SubArrowSvg />
             </button>
           </div>
           {emailStatus === 'invalid' && (

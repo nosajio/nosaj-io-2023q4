@@ -1,6 +1,7 @@
 .content_grid {
   display: grid;
   width: 100%;
+  margin: 0 auto;
   max-width: var(--content-width);
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   gap: 0px var(--grid-gutter);

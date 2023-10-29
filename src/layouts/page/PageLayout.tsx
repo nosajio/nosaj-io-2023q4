@@ -16,11 +16,11 @@ const pages = [
     label: 'Posts',
     href: '/r',
   },
-  {
-    label: 'Feed',
-    href: '/rss',
-    blank: true,
-  },
+  // {
+  //   label: 'Feed',
+  //   href: '/rss',
+  //   blank: true,
+  // },
 ];
 
 export default function PageLayout({ children }: PageLayoutProps) {
