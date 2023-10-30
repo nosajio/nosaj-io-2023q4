@@ -1,4 +1,5 @@
 @use '@/styles/grid.scss';
+@use '@/styles/queries.scss' as *;
 
 .home {
   @extend .content_grid;
@@ -42,7 +43,7 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
   .section {
     &_title {
       color: var(--color-gray-6);

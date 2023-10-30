@@ -1,3 +1,5 @@
+@use '@/styles/queries.scss' as *;
+
 .posts {
   display: flex;
   flex-direction: column;
@@ -14,10 +16,27 @@
     font-weight: 400;
     font-family: var(--font-family-monospace);
     font-size: 15px;
+    width: 100px;
+    flex-shrink: 0;
   }
 
   &_title {
     font-size: var(--size-base-2);
     font-weight: 500;
+  }
+}
+
+@include small-screens {
+  .posts {
+    row-gap: calc(1rem * var(--scale-2));
+  }
+
+  .post {
+    column-gap: 1rem;
+
+    &_date {
+      font-size: 14px;
+      width: 90px;
+    }
   }
 }

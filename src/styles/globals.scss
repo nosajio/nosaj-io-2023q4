@@ -1,5 +1,6 @@
 @use 'sass:math' as math;
 @use 'modern-normalize';
+@use '@/styles/vars.scss' as *;
 
 :root {
   // Typography
@@ -13,8 +14,9 @@
   --line-height-reading: 149%;
   --line-height-headings: 113%;
   --scale-exponent: 1.25;
-  --content-width: 912px;
+  --content-width: #{$content-width};
   --size-base-2: 1.125rem; // 18px
+  --page-margin: calc(1rem * var(--scale-2));
 
   // Modular scale
   @for $i from -5 through 12 {

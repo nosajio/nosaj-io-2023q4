@@ -45,7 +45,7 @@ export default function PageLayout({ children }: PageLayoutProps) {
           </ul>
         </nav>
       </header>
-      {children}
+      <div className={s.content}>{children}</div>
     </div>
   );
 }

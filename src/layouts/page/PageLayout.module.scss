@@ -1,13 +1,19 @@
-@use '../../styles/grid.scss';
+@use '@/styles/queries.scss' as *;
+@use '@/styles/grid.scss';
 
 .masthead {
+  position: fixed;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
   width: 100%;
-  padding: calc(1rem * var(--scale-2)) calc(var(--size-base-2) * var(--scale-4))
-    89px;
+  padding: calc(1rem * var(--scale-2)) calc(var(--size-base-2) * var(--scale-4));
   font-size: var(--size-base-2);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
 }
 
 .jason_logo {
@@ -33,11 +39,27 @@
 }
 
 .page {
-  margin: 0 auto;
+  position: relative;
 }
 
-@media (prefers-color-scheme: dark) {
+.content {
+  padding-top: calc(1rem * var(--scale-10));
+}
+
+@include dark-mode {
+  .masthead {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    padding-left: var(--page-margin);
+    padding-right: var(--page-margin);
+  }
+
   .jason_logo a {
     color: var(--color-gray-8);
+  }
+}
+
+@include small-screens {
+  .content {
+    padding-top: calc(1rem * var(--scale-9));
   }
 }

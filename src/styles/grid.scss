@@ -1,3 +1,5 @@
+@use '@/styles/queries.scss' as *;
+
 .content_grid {
   display: grid;
   width: 100%;
@@ -29,5 +31,17 @@
 @for $i from 1 through 12 {
   .grid_end_#{$i} {
     grid-column-end: #{$i};
+  }
+}
+
+@include small-screens {
+  .content_grid {
+    padding-left: var(--page-margin);
+    padding-right: var(--page-margin);
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .grid_content {
+    grid-column: 1 / span 4;
   }
 }

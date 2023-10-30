@@ -1,3 +1,5 @@
+@use '@/styles/queries.scss' as *;
+
 .subscribe {
   --input-border-color: var(--color-gray-6);
   --input-background: var(--color-gray-9);
@@ -16,12 +18,14 @@
 
 .inputWrapper .button {
   border: none;
+  flex-grow: 0;
   border-left: 1px solid var(--input-border-color);
   border-radius: 0 3px 3px 0;
 }
 
 .inputWrapper .input {
   border: none;
+  flex-grow: 1;
   background: transparent;
   padding: 7px var(--size-base-2);
   width: 256px;
@@ -71,7 +75,7 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
   .subscribe {
     --input-border-color: var(--color-gray-3);
     --input-background: var(--color-gray-1);
@@ -99,5 +103,13 @@
     > svg path {
       fill: var(--color-green-6);
     }
+  }
+}
+
+@include small-screens {
+  .subscribe {
+    flex-direction: column;
+    align-items: start;
+    row-gap: var(--size-base-2);
   }
 }

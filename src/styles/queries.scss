@@ -1,0 +1,13 @@
+@use './vars.scss' as *;
+
+@mixin small-screens {
+  @media (max-width: #{$content-width}) {
+    @content;
+  }
+}
+
+@mixin dark-mode {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}

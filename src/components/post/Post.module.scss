@@ -1,3 +1,4 @@
+@use '@/styles/queries.scss' as *;
 @use '@/styles/grid.scss';
 
 .post {
@@ -200,7 +201,7 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+@include dark-mode {
   .meta_item {
     color: var(--color-gray-7);
     &:not(:first-child)::before {
@@ -234,5 +235,19 @@
       background: #07180f;
       border-color: var(--color-green-5);
     }
+  }
+}
+
+@include small-screens {
+  .post {
+    --content-font-size: var(--size-base-2);
+  }
+
+  .meta {
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: calc(1rem * var(--scale-3));
   }
 }
