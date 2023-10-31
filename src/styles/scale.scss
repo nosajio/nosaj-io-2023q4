@@ -1,0 +1,16 @@
+@use 'sass:math' as math;
+
+$root-font-size: 16;
+
+@mixin vars($base: 16, $label: '', $exp: 1.25, $round: true) {
+  /* scale#{$label} base=#{$base} exponent=#{$exp} */
+  $root-adjust: $base / $root-font-size;
+  @for $i from -5 through 12 {
+    $pow: math.pow($exp, $i);
+    $px: math.round($pow * $base);
+    $rounded: $px / $root-font-size;
+    /* #{$px}px */
+    --scale#{$label}-#{$i}: #{$rounded};
+    --rem#{$label}-#{$i}: #{$rounded}rem;
+  }
+}

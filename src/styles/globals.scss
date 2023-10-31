@@ -1,4 +1,4 @@
-@use 'sass:math' as math;
+@use './scale.scss' as scale;
 @use 'modern-normalize';
 @use '@/styles/vars.scss' as *;
 
@@ -12,23 +12,15 @@
   --font-family: var(--font-geist-sans);
   --font-family-monospace: var(--font-geist-mono);
 
+  // Modular scales
+  @include scale.vars();
+  @include scale.vars($base: 18, $label: '-b');
+
   // Sizes
   --line-height-reading: 149%;
   --line-height-headings: 113%;
-  --scale-exponent: 1.25;
   --content-width: #{$content-width};
-  --size-base-2: 1.125rem; // 18px
   --page-margin: var(--rem-2);
-
-  // Modular scale
-  $base: 16;
-  @for $i from -5 through 12 {
-    $pow: math.pow(1.25, $i);
-    $px: math.round($pow * $base);
-    $rounded: $px / $base;
-    --scale-#{$i}: #{$rounded}; /* #{$px}px */
-    --rem-#{$i}: #{$rounded}rem;
-  }
 
   // Grid
   --grid-gutter: 18px;

@@ -240,7 +240,7 @@
 
 @include small-screens {
   .post {
-    --content-font-size: var(--size-base-2);
+    --content-font-size: var(--rem-b-0);
   }
 
   .meta {
