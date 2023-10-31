@@ -41,13 +41,13 @@
 .button {
   color: var(--input-text-color);
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   column-gap: 7px;
   border-radius: 4px;
   border: 1px solid var(--input-border-color);
   background: var(--input-background);
-  padding: 7px var(--size-base-2);
+  padding: 7px var(--size-base-2) 5px;
   cursor: pointer;
 }
 

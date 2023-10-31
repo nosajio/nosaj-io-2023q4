@@ -28,7 +28,7 @@
 
 @include small-screens {
   .posts {
-    row-gap: calc(1rem * var(--scale-2));
+    row-gap: var(--rem-2);
   }
 
   .post {

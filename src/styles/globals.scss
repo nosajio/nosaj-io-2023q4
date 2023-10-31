@@ -18,11 +18,16 @@
   --scale-exponent: 1.25;
   --content-width: #{$content-width};
   --size-base-2: 1.125rem; // 18px
-  --page-margin: calc(1rem * var(--scale-2));
+  --page-margin: var(--rem-2);
 
   // Modular scale
+  $base: 16;
   @for $i from -5 through 12 {
-    --scale-#{$i}: #{math.pow(1.25, $i)};
+    $pow: math.pow(1.25, $i);
+    $px: math.round($pow * $base);
+    $rounded: $px / $base;
+    --scale-#{$i}: #{$rounded}; /* #{$px}px */
+    --rem-#{$i}: #{$rounded}rem;
   }
 
   // Grid

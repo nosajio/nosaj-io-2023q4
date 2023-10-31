@@ -5,9 +5,10 @@
   position: fixed;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 0 auto;
   width: 100%;
-  padding: calc(1rem * var(--scale-2)) calc(var(--size-base-2) * var(--scale-4));
+  padding: var(--rem-2) calc(var(--size-base-2) * var(--scale-4));
   font-size: var(--size-base-2);
   background: linear-gradient(
     to bottom,
@@ -22,28 +23,13 @@
   font-family: var(--font-family-monospace);
 }
 
-.nav_links {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  column-gap: 40px;
-}
-
-.nav_link {
-  font-weight: 500;
-}
-
-.nav_svg path {
-  fill: var(--text-color);
-}
-
 .page {
   position: relative;
 }
 
 .content {
-  padding-top: calc(1rem * var(--scale-10));
+  padding-top: var(--rem-10);
+  padding-bottom: var(--rem-5);
 }
 
 @include dark-mode {
@@ -60,6 +46,6 @@
 
 @include small-screens {
   .content {
-    padding-top: calc(1rem * var(--scale-9));
+    padding-top: var(--rem-9);
   }
 }

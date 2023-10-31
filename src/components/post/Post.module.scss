@@ -2,11 +2,11 @@
 @use '@/styles/grid.scss';
 
 .post {
-  --content-margin: calc(var(--scale-3) * 1rem);
+  --content-margin: var(--rem-3);
   --content-line-height: var(--line-height-reading);
-  --content-font-size: calc(var(--scale-1) * 1rem);
+  --content-font-size: var(--rem-1);
   --content-margin-reset: calc(0rem - var(--content-margin));
-  --section-gap: calc(1rem * var(--scale-5));
+  --section-gap: var(--rem-5);
 
   display: flex;
   flex-direction: column;
@@ -27,7 +27,7 @@
 
 .title {
   grid-area: title;
-  font-size: calc(var(--scale-4) * 1rem);
+  font-size: var(--rem-4);
   font-weight: 700;
 }
 
@@ -38,7 +38,7 @@
   margin: 0;
   padding: 0;
   display: flex;
-  column-gap: calc(1rem * var(--scale--1));
+  column-gap: var(--rem--1);
 
   &_item {
     color: var(--color-gray-5);
@@ -48,7 +48,7 @@
     display: inline-block;
     content: '•';
     color: var(--color-gray-7);
-    margin-right: calc(1rem * var(--scale--1));
+    margin-right: var(--rem--1);
   }
 }
 
@@ -115,24 +115,24 @@
   h3,
   h4,
   h5 {
-    margin-top: calc(var(--scale-3) * 1em);
+    margin-top: var(--rem-3);
     margin-bottom: var(--content-margin);
     font-weight: 700;
   }
   h1 {
-    font-size: calc(var(--scale-3) * 1rem);
+    font-size: var(--rem-3);
   }
   h2 {
-    font-size: calc(var(--scale-2) * 1rem);
+    font-size: var(--rem-2);
   }
   h3,
   h4 {
-    font-size: calc(var(--scale-1) * 1rem);
-    margin-bottom: calc(var(--content-margin-reset) + (var(--scale--1) * 1rem));
+    font-size: var(--rem-1);
+    margin-bottom: calc(var(--content-margin-reset) + (var(--rem--1)));
   }
   h5 {
     font-size: var(--content-font-size);
-    margin-bottom: calc(var(--content-margin-reset) + (var(--scale--1) * 1rem));
+    margin-bottom: calc(var(--content-margin-reset) + (var(--rem--1)));
     font-weight: 600;
   }
 
@@ -144,8 +144,8 @@
   blockquote {
     border-left: 3px solid var(--color-blue-5);
     margin: var(--content-margin) 0;
-    padding: calc(var(--scale-2) * 1rem);
-    padding-left: calc(var(--scale-3) * 1rem);
+    padding: var(--rem-2);
+    padding-left: var(--rem-3);
     background: var(--color-gray-9);
 
     p {
@@ -176,10 +176,10 @@
   ol > li {
     font-size: var(--content-font-size);
     line-height: var(--content-line-height);
-    padding-left: calc(var(--scale--2) * 1rem);
+    padding-left: var(--rem--2);
 
     & + li {
-      margin-top: calc(var(--scale--4) * 1rem);
+      margin-top: var(--rem--4);
     }
   }
 
@@ -189,8 +189,8 @@
 
   li > ul,
   li > ol {
-    margin-top: calc(var(--scale--4) * 1rem);
-    margin-bottom: calc(var(--scale--4) * 1rem);
+    margin-top: var(--rem--4);
+    margin-bottom: var(--rem--4);
   }
 
   hr {
@@ -248,6 +248,6 @@
   }
 
   .title {
-    font-size: calc(1rem * var(--scale-3));
+    font-size: var(--rem-3);
   }
 }

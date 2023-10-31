@@ -1,0 +1,85 @@
+@use '@/styles/queries.scss' as *;
+
+.hamburger {
+  display: none;
+}
+
+.nav_links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  column-gap: 40px;
+}
+
+.nav_link {
+  font-weight: 500;
+}
+
+.nav_svg path {
+  fill: var(--text-color);
+}
+
+@include small-screens {
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    padding: 4px;
+    border: none;
+    background: none;
+    outline: none;
+  }
+
+  .hamburger_border {
+    width: 26px;
+    height: 17px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    background: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 2px;
+  }
+
+  .hamburger_line {
+    width: 8px;
+    height: 1px;
+    background: var(--text-color);
+  }
+
+  .nav_links {
+    flex-direction: column;
+    position: fixed;
+    background: var(--background-color);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: var(--rem-6) var(--rem-2) var(--rem-2) var(--rem-2);
+    row-gap: var(--rem-2);
+  }
+
+  .nav_link {
+    font-size: var(--rem-3);
+  }
+
+  .nav_svg {
+    width: var(--rem-2);
+    height: var(--rem-2);
+  }
+
+  .nav_links.visible {
+    display: flex;
+  }
+}
+
+@include dark-mode {
+  .hamburger_border {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+}
