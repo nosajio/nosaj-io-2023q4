@@ -1,6 +1,6 @@
 import { calculateReadingTime, formatDate } from '@/helpers/postHelpers';
 import { Post } from '@prisma/client';
-import clsx from 'clsx';
+import cn from 'classnames';
 import { CSSProperties } from 'react';
 import Subscribe from '../subscribe/Subscribe';
 import s from './Post.module.scss';
@@ -15,7 +15,7 @@ export default function Post({ post }: PostProps) {
 
   return (
     <div className={s.content_grid}>
-      <div className={clsx(s.post, s.grid_content)} role="article">
+      <div className={cn(s.post, s.grid_content)} role="article">
         <header className={s.header} role="heading" aria-level={1}>
           <h1 className={s.title}>{post.title}</h1>
           <ul className={s.meta}>

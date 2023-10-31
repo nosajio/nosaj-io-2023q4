@@ -4,11 +4,13 @@
 
 :root {
   // Typography
-  --font-family: 'aktiv-grotesk', -apple-system, BlinkMacSystemFont, avenir next,
-    avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto,
-    arial, sans-serif;
-  --font-family-monospace: 'Space Mono', 'SF Mono', 'Monaco', 'Inconsolata',
-    'Fira Mono', 'Droid Sans Mono', 'Source Code Pro', monospace;
+  // --font-family: 'aktiv-grotesk', -apple-system, BlinkMacSystemFont, avenir next,
+  //   avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto,
+  //   arial, sans-serif;
+  // --font-family-monospace: 'Space Mono', 'SF Mono', 'Monaco', 'Inconsolata',
+  //   'Fira Mono', 'Droid Sans Mono', 'Source Code Pro', monospace;
+  --font-family: var(--font-geist-sans);
+  --font-family-monospace: var(--font-geist-mono);
 
   // Sizes
   --line-height-reading: 149%;

@@ -1,6 +1,8 @@
 import { AlertProvider } from '@/context/AlertContext';
 import PageLayout from '@/layouts/page/PageLayout';
 import '@/styles/globals.scss';
+import cn from 'classnames';
+import { GeistMono, GeistSans } from 'geist/font';
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 
@@ -11,14 +13,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap"
-        />
-        <link rel="stylesheet" href="https://use.typekit.net/llb7ehz.css" />
-      </head>
+    <html lang="en" className={cn(GeistSans.variable, GeistMono.variable)}>
       <body>
         <AlertProvider>
           <PageLayout>{children}</PageLayout>

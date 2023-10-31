@@ -1,5 +1,5 @@
 import { Post } from '@prisma/client';
-import clsx from 'clsx';
+import cn from 'classnames';
 import Link from 'next/link';
 import PostsList from '../posts/PostsList';
 import Subscribe from '../subscribe/Subscribe';
@@ -12,7 +12,7 @@ type HomePageProps = {
 export default function HomePage({ posts }: HomePageProps) {
   const latestPost = posts[0];
   return (
-    <div className={clsx(s.home, s.grid_content)}>
+    <div className={cn(s.home, s.grid_content)}>
       {/* Latest post */}
       <section className={s.section}>
         <h1 className={s.section_title}>Latest Post</h1>

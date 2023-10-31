@@ -1,6 +1,6 @@
 'use client';
 import { AlertContext, AlertType } from '@/context/AlertContext';
-import clsx from 'clsx';
+import cn from 'classnames';
 import { ReactNode, useContext } from 'react';
 import s from './AlertBanner.module.scss';
 
@@ -24,8 +24,6 @@ export function AlertUI({
   type?: AlertType;
 }) {
   return (
-    <div className={clsx(s.alert, type ? s?.[type] : undefined)}>
-      {children}
-    </div>
+    <div className={cn(s.alert, type ? s?.[type] : undefined)}>{children}</div>
   );
 }
