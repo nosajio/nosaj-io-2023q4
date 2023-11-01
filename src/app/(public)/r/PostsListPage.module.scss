@@ -1,1 +1,16 @@
+@use '@/styles/queries.scss' as *;
 @use '@/styles/grid.scss';
+
+.posts_header {
+  margin-bottom: var(--rem-2);
+}
+
+.posts_title {
+  font-size: var(--rem-4);
+}
+
+@include small-screens {
+  .posts_title {
+    font-size: var(--rem-3);
+  }
+}

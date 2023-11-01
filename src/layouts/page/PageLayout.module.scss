@@ -18,8 +18,8 @@
 }
 
 .jason_logo {
-  font-weight: 700;
-  font-size: 1rem;
+  font-weight: 600;
+  font-size: var(--rem-b-0);
   font-family: var(--font-family-monospace);
 }
 
@@ -35,8 +35,6 @@
 @include dark-mode {
   .masthead {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-    padding-left: var(--page-margin);
-    padding-right: var(--page-margin);
   }
 
   .jason_logo a {
@@ -45,6 +43,11 @@
 }
 
 @include small-screens {
+  .masthead {
+    padding-left: var(--page-margin);
+    padding-right: var(--page-margin);
+  }
+
   .content {
     padding-top: var(--rem-9);
   }

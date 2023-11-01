@@ -7,6 +7,9 @@ export default async function PostsListPage() {
   return (
     <div className={s.content_grid}>
       <div className={s.grid_content}>
+        <header className={s.posts_header}>
+          <h1 className={s.posts_title}>All Posts</h1>
+        </header>
         <PostsList posts={publishedPosts} />
       </div>
     </div>

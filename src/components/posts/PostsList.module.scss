@@ -4,14 +4,6 @@
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
-
-  &_header {
-    margin-bottom: var(--rem-2);
-  }
-
-  &_title {
-    font-size: var(--rem-4);
-  }
 }
 
 .post {
@@ -37,14 +29,6 @@
 @include small-screens {
   .posts {
     row-gap: var(--rem-2);
-
-    &_header {
-      margin-bottom: var(--rem--2);
-    }
-
-    &_title {
-      font-size: var(--rem-3);
-    }
   }
 
   .post {

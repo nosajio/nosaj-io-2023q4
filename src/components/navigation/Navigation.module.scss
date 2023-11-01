@@ -46,7 +46,7 @@
   .hamburger_line {
     width: 10px;
     height: 1px;
-    background: var(--color-white);
+    background: var(--text-color);
   }
 
   .nav_links {
@@ -81,5 +81,9 @@
 @include dark-mode {
   .hamburger_border {
     border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .hamburger_line {
+    background: var(--color-white);
   }
 }

@@ -12,7 +12,7 @@ export default function PageLayout({ children }: PageLayoutProps) {
     <div className={s.page}>
       <header className={s.masthead}>
         <h1 className={s.jason_logo}>
-          <Link href="/">Jason Howmans</Link>
+          <Link href="/">nosaj.io</Link>
         </h1>
         <Navigation />
       </header>
