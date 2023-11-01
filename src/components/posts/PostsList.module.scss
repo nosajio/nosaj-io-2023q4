@@ -4,24 +4,32 @@
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
+
+  &_header {
+    margin-bottom: var(--rem-2);
+  }
+
+  &_title {
+    font-size: var(--rem-4);
+  }
 }
 
 .post {
   display: flex;
-  column-gap: var(--rem-b-3);
+  column-gap: var(--rem-b-1);
   align-items: baseline;
 
   &_date {
     color: var(--color-gray-5);
     font-weight: 400;
     font-family: var(--font-family-monospace);
-    font-size: 15px;
+    font-size: var(--rem-b--1);
     width: 100px;
     flex-shrink: 0;
   }
 
   &_title {
-    font-size: var(--rem-b-0);
+    font-size: 1rem;
     font-weight: 500;
   }
 }
@@ -29,10 +37,24 @@
 @include small-screens {
   .posts {
     row-gap: var(--rem-2);
+
+    &_header {
+      margin-bottom: var(--rem--2);
+    }
+
+    &_title {
+      font-size: var(--rem-3);
+    }
   }
 
   .post {
-    column-gap: 1rem;
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: var(--rem--5);
+
+    &_title {
+      font-size: 1rem;
+    }
 
     &_date {
       font-size: 14px;

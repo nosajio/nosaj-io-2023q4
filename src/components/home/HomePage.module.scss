@@ -19,7 +19,7 @@
 
   &_title {
     font-family: var(--font-family-monospace);
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1rem;
     color: var(--color-gray-6);
   }
@@ -46,17 +46,17 @@
 @include dark-mode {
   .section {
     &_title {
-      color: var(--color-gray-6);
+      color: var(--text-color);
     }
 
     & + .section {
-      border-top-color: var(--color-gray-2);
+      border-top-color: var(--color-gray-3);
     }
   }
 
   .latestPost {
     &_blurb {
-      color: var(--color-gray-6);
+      color: var(--color-gray-8);
     }
   }
 }

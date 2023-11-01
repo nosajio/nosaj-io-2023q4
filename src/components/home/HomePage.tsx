@@ -15,7 +15,7 @@ export default function HomePage({ posts }: HomePageProps) {
     <div className={cn(s.home, s.grid_content)}>
       {/* Latest post */}
       <section className={s.section}>
-        <h1 className={s.section_title}>Latest Post</h1>
+        <h1 className={s.section_title}>Latest</h1>
         <Link href={`/r/${latestPost.slug}`}>
           <section className={s.latestPost}>
             <h2 className={s.latestPost_title}>{latestPost.title}</h2>

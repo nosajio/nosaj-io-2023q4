@@ -1,4 +1,4 @@
-import { calculateReadingTime, formatDate } from '@/helpers/postHelpers';
+import { calculateReadingTime, formatDateFull } from '@/helpers/postHelpers';
 import { Post } from '@prisma/client';
 import cn from 'classnames';
 import { CSSProperties } from 'react';
@@ -11,7 +11,7 @@ type PostProps = {
 
 export default function Post({ post }: PostProps) {
   const readingTime = calculateReadingTime(post.markdown);
-  const pubdate = formatDate(post.pubDate);
+  const pubdate = formatDateFull(post.pubDate);
 
   return (
     <div className={s.content_grid}>
@@ -24,7 +24,7 @@ export default function Post({ post }: PostProps) {
             </li>
             <li className={s.meta_item}>{readingTime} minutes</li>
           </ul>
-          {post.blurb && <p className={s.blurb}>{post.blurb}</p>}
+          {/* {post.blurb && <p className={s.blurb}>{post.blurb}</p>} */}
         </header>
         {post.coverImage && (
           <div

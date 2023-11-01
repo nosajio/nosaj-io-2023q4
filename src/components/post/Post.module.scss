@@ -21,13 +21,13 @@
   display: grid;
   row-gap: 1rem;
   grid-template:
-    'meta' auto
-    'title' auto / 1fr;
+    'title' auto
+    'meta' auto / 1fr;
 }
 
 .title {
   grid-area: title;
-  font-size: var(--rem-4);
+  font-size: var(--rem-3);
   font-weight: 700;
 }
 
@@ -50,12 +50,6 @@
     color: var(--color-gray-7);
     margin-right: var(--rem--1);
   }
-}
-
-.blurb {
-  font-size: var(--content-font-size);
-  line-height: var(--content-line-height);
-  color: var(--color-gray-5);
 }
 
 .cover {
@@ -115,9 +109,9 @@
   h3,
   h4,
   h5 {
-    margin-top: var(--rem-3);
-    margin-bottom: var(--content-margin);
-    font-weight: 700;
+    margin-top: calc(1em * var(--scale-4));
+    margin-bottom: calc(-1 * (1em * var(--scale--1)));
+    font-weight: 600;
   }
   h1 {
     font-size: var(--rem-3);
@@ -209,17 +203,18 @@
     }
   }
 
-  .blurb {
-    color: var(--color-gray-7);
-  }
-
   .body {
+    p,
+    li {
+      color: var(--color-gray-9);
+    }
+
     h1,
     h2,
     h3,
     h4,
     h5 {
-      color: var(--color-gray-8);
+      color: var(--color-white);
     }
 
     a {
@@ -235,6 +230,10 @@
       background: #07180f;
       border-color: var(--color-green-5);
     }
+
+    blockquote p {
+      color: var(--color-white);
+    }
   }
 }
 
@@ -248,6 +247,6 @@
   }
 
   .title {
-    font-size: var(--rem-3);
+    font-size: var(--rem-2);
   }
 }

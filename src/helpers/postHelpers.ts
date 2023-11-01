@@ -36,3 +36,11 @@ export const formatDate = (
 
   return `${day} ${monthShort} ${yearValue}`;
 };
+
+export const formatDateFull = (date: Date) => {
+  const monthLong = date.toLocaleDateString('en-US', { month: 'long' });
+  const day = getDay(date);
+  const year = date.getFullYear();
+
+  return `${day} ${monthLong} ${year}`;
+};
