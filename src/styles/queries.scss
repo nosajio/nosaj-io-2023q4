@@ -6,6 +6,12 @@
   }
 }
 
+@mixin big-screens {
+  @media (min-width: #{$content-width + 1px}) {
+    @content;
+  }
+}
+
 @mixin dark-mode {
   @media (prefers-color-scheme: dark) {
     @content;
