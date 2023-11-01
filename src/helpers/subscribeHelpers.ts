@@ -1,7 +1,8 @@
-import { ROOT_URL, getUnsubscribeLink } from '@/config/constants';
+import { ROOT_URL } from '@/config/constants';
 import client from '@/db/client';
 import short from 'short-uuid';
 import { sendEmail } from './emailHelpers';
+import { newEvent } from './eventHelpers';
 
 const getConfirmLink = (token: string) => `${ROOT_URL}?token=${token}`;
 
@@ -21,13 +22,16 @@ export async function saveConfirmationWithToken(token: string) {
   return true;
 }
 
+export const getUnsubscribeLink = (token: string, emailId?: string) =>
+  `${ROOT_URL}/unsubscribe?token=${token}&eid=${emailId ?? 'na'}`;
+
 async function sendConfirmationEmail(email: string, confirmToken: string) {
   // Get subscriber from db, ensure they're not yet confirmed
   const subscriber = await client.subscriber.findFirst({
     where: { email },
   });
   if (subscriber?.confirmDate) {
-    return false;
+    throw new Error("This subscriber's email has already been confirmed.");
   }
 
   // Generate email body
@@ -78,4 +82,27 @@ export async function saveSubscriber(
     console.error(error);
     return 'error';
   }
+}
+
+export async function unsubscribeSubscriber(
+  unsubscribeToken: string,
+  emailId?: string,
+) {
+  const subscriber = await client.subscriber.findFirstOrThrow({
+    where: { confirmToken: unsubscribeToken },
+  });
+
+  // Record the unsubscribe event
+  await newEvent('unsubscribe', {
+    unsubscribeToken,
+    email: subscriber.email,
+    emailId: emailId ?? 'na',
+  });
+
+  // Delete the subscriber from the subscribers table
+  await client.subscriber.delete({
+    where: { id: subscriber.id },
+  });
+
+  return true;
 }
