@@ -57,24 +57,30 @@ export default function AboutPage() {
         <h1 className={s.title}>Hello, I&apos;m Jason.</h1>
         <div className={s.content_section}>
           <p>
-            You might know me online as @nosajio. I like to design and build
-            software, start companies, and help other people do the same.
+            You might know me online as{' '}
+            <Link href="https://x.com/nosajio" target="_blank">
+              @nosajio
+            </Link>
+            . I create software, play with AI, and love to learn new things.
           </p>
         </div>
 
         <div className={s.content_section}>
           <h2 className={s.section_title}>Now</h2>
           <p>
-            When I&apos;m not working on Sprinterview, I help startups and
-            founders validate and build marketable software.
+            I&apos;m currently building{' '}
+            <Link href="https://sprinterview.ai" target="_blank">
+              Sprinterview
+            </Link>
+            , an automated interview product. And I work with select founders
+            and startups with product &amp; engineering.
           </p>
         </div>
 
         <div className={s.content_section}>
           <h2 className={s.section_title}>Before</h2>
           <p>
-            Before I decided to start my founder journey, I worked on the
-            founding teams of startups like{' '}
+            Before Sprinterview, I worked on the founding teams of startups like{' '}
             <Link target="_blank" href="https://pave.com">
               Pave (YC)
             </Link>
