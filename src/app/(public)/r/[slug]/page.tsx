@@ -2,6 +2,7 @@ import Post from '@/components/post/Post';
 import client from '@/db/client';
 import { Metadata } from 'next';
 import Head from 'next/head';
+import { notFound } from 'next/navigation';
 
 type PostPageProps = {
   params: {
@@ -43,8 +44,9 @@ export default async function PostPage({ params }: PostPageProps) {
   const post = await client.post.findUnique({
     where: { slug: params.slug, published: true },
   });
+
   if (!post) {
-    return null;
+    return notFound();
   }
 
   return (
