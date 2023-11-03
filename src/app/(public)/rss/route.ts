@@ -6,6 +6,18 @@ import RSS, { type FeedOptions } from 'rss';
 
 const feedUrl = `${ROOT_URL}/rss`;
 
+const concatMarkdown = (
+  body: string,
+  title: string,
+  coverImage: Nullable<string>,
+) => `
+# ${title}
+
+${coverImage ? `![${title}](${coverImage})` : ''}
+
+${body}
+`;
+
 export async function GET() {
   const posts = await getPublishedPosts();
   const options: FeedOptions = {
@@ -17,7 +29,9 @@ export async function GET() {
   const feed = new RSS(options);
 
   posts.forEach(post => {
-    const html = marked.parse(post.markdown);
+    const html = marked.parse(
+      concatMarkdown(post.markdown, post.title, post.coverImage),
+    );
     feed.item({
       title: post.title,
       description: html,

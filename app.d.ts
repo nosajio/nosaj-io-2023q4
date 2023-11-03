@@ -3,3 +3,5 @@ declare module '*.svg?svgr' {
   const SVG: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
   export default SVG;
 }
+
+type Nullable<T> = T | null;
