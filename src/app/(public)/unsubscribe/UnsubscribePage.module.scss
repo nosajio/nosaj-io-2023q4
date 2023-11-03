@@ -1,1 +1,11 @@
 @use '@/styles/grid.scss';
+
+.section {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--rem--1);
+
+  & + .section {
+    margin-top: var(--rem-2);
+  }
+}

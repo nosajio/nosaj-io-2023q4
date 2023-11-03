@@ -88,21 +88,26 @@ export async function unsubscribeSubscriber(
   unsubscribeToken: string,
   emailId?: string,
 ) {
-  const subscriber = await client.subscriber.findFirstOrThrow({
-    where: { confirmToken: unsubscribeToken },
-  });
+  try {
+    const subscriber = await client.subscriber.findFirstOrThrow({
+      where: { confirmToken: unsubscribeToken },
+    });
 
-  // Record the unsubscribe event
-  await newEvent('unsubscribe', {
-    unsubscribeToken,
-    email: subscriber.email,
-    emailId: emailId ?? 'na',
-  });
+    // Record the unsubscribe event
+    await newEvent('unsubscribe', {
+      unsubscribeToken,
+      email: subscriber.email,
+      emailId: emailId ?? 'na',
+    });
 
-  // Delete the subscriber from the subscribers table
-  await client.subscriber.delete({
-    where: { id: subscriber.id },
-  });
+    // Delete the subscriber from the subscribers table
+    await client.subscriber.delete({
+      where: { id: subscriber.id },
+    });
 
-  return true;
+    return true;
+  } catch (err) {
+    console.error(err);
+    return false;
+  }
 }
